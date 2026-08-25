@@ -1,0 +1,17 @@
+export const foods = [
+  { id: 'krapao', name: 'กะเพรา', emoji: '🍛', hint: 'เผ็ดร้อน ใบกะเพราหอม' },
+  { id: 'padthai', name: 'ผัดไทย', emoji: '🍜', hint: 'เส้นนุ่ม หวานเค็มสมดุล' },
+  { id: 'somtum', name: 'ส้มตำ', emoji: '🥗', hint: 'เปรี้ยว เผ็ด กรอบ' },
+  { id: 'khaomunkai', name: 'ข้าวมันไก่', emoji: '🍗', hint: 'ไก่นุ่ม น้ำจิ้มเด็ด' },
+  { id: 'noodle', name: 'ก๋วยเตี๋ยว', emoji: '🍲', hint: 'น้ำใส น้ำตก หรือแห้ง' },
+  { id: 'khao-kha-moo', name: 'ข้าวขาหมู', emoji: '🍖', hint: 'ขาหมูนุ่ม ไข่ต้ม' },
+  { id: 'tomyum', name: 'ต้มยำกุ้ง', emoji: '🦐', hint: 'เปรี้ยวเผ็ด เครื่องแน่น' },
+  { id: 'fried-rice', name: 'ข้าวผัด', emoji: '🍚', hint: 'กลิ่นหอมกระทะ' },
+  { id: 'moo-tod', name: 'หมูทอดกระเทียม', emoji: '🧄', hint: 'กรอบนอก นุ่มใน' },
+  { id: 'omelette', name: 'ไข่เจียว', emoji: '🥚', hint: 'ฟู กรอบ ราดข้าว' },
+  { id: 'green-curry', name: 'แกงเขียวหวาน', emoji: '🥘', hint: 'กะทิเข้ม หวานมัน' },
+  { id: 'larb', name: 'ลาบ', emoji: '🥬', hint: 'สมุนไพรอีสาน' },
+  { id: 'moo-dang', name: 'ข้าวหมูแดง', emoji: '🐷', hint: 'หมูแดง น้ำราดหวานมัน' },
+  { id: 'boat-noodle', name: 'ก๋วยเตี๋ยวเรือ', emoji: '⛵', hint: 'น้ำเข้มข้น เลือดหมู' },
+  { id: 'mango-sticky', name: 'ข้าวเหนียวมะม่วง', emoji: '🥭', hint: 'ของหวานปิดท้าย' },
+]
