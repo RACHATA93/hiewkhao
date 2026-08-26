@@ -29,6 +29,39 @@ export function formatDistance(km) {
   return `${km.toFixed(1)} กม.`
 }
 
-export function mapsDirectionsUrl(lat, lng) {
+/**
+ * คำนวณเวลาเดินทางโดยประมาณ (เดินเท้าความเร็วเฉลี่ย 4.8 กม./ชม. หรือขับรถหากไกล)
+ */
+export function formatTravelEstimate(km) {
+  if (!Number.isFinite(km)) return ''
+  if (km <= 1.2) {
+    const minutes = Math.max(1, Math.round((km / 4.8) * 60))
+    return `🚶 เดิน ~${minutes} นาที`
+  }
+  const driveMinutes = Math.max(2, Math.round((km / 25) * 60))
+  return `🚗 ขับรถ ~${driveMinutes} นาที`
+}
+
+/**
+ * สร้างลิงก์นำทางบน Google Maps ที่ถูกต้อง
+ */
+export function mapsDirectionsUrl(lat, lng, name = '') {
+  if (name) {
+    const query = encodeURIComponent(name)
+    return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_name=${query}&travelmode=walking`
+  }
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`
+}
+
+/**
+ * สร้างลิงก์ค้นหาร้านหรือเปิดสถานที่บน Google Maps
+ */
+export function mapsSearchUrl(name, lat, lng, address = '') {
+  const cleanName = (name || '').trim()
+  const cleanAddr = (address || '').trim()
+  const query = encodeURIComponent([cleanName, cleanAddr].filter(Boolean).join(' '))
+  if (lat && lng) {
+    return `https://www.google.com/maps/search/?api=1&query=${query || `${lat},${lng}`}`
+  }
+  return `https://www.google.com/maps/search/?api=1&query=${query}`
 }
